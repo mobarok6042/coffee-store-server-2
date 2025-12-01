@@ -10,7 +10,10 @@ const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 
 
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@coffee.irdbo8s.mongodb.net/?appName=Coffee`;
+const uri = 'mongodb+srv://coffeeMaster:vbM4zDkDFp1yrbQz@coffee.irdbo8s.mongodb.net/?appName=Coffee';
+
+console.log(process.env.DB_USER);
+console.log(process.env.DB_PASS);
 
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -36,12 +39,40 @@ async function run() {
         })
 
 
+        app.get('/coffee/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: new ObjectId(id) };
+            const result = await coffeeCollection.findOne(query);
+            res.send(result);
+        })
+
         app.post('/coffee', async (req, res) => {
             const newCoffee = req.body;
             console.log(newCoffee);
             const result = await coffeeCollection.insertOne(newCoffee);
             res.send(result);
         })
+
+app.put('/coffee/:id', async (req, res) => {
+            const id = req.params.id;
+            const filter = { _id: new ObjectId(id) };
+            const options = { upsert: true };
+            const updatedCoffee = req.body;
+            const coffee = {
+                $set: {
+                    name: updatedCoffee.name,
+                    quantity: updatedCoffee.quantity,
+                    supplier: updatedCoffee.supplier,
+                    taste: updatedCoffee.taste,
+                    category: updatedCoffee.category,
+                    details: updatedCoffee.details,
+                    photo: updatedCoffee.photo
+                }
+            };
+            const result = await coffeeCollection.updateOne(filter, coffee, options);
+            res.send(result);
+})
+
 
         app.delete('/coffee/:id', async (req, res) => {
             const id = req.params.id;

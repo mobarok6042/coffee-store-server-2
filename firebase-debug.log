@@ -1,0 +1,23 @@
+[debug] [2025-12-12T06:51:13.429Z] ----------------------------------------------------------------------
+[debug] [2025-12-12T06:51:13.432Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Mobarok\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-12-12T06:51:13.433Z] CLI Version:   15.0.0
+[debug] [2025-12-12T06:51:13.433Z] Platform:      win32
+[debug] [2025-12-12T06:51:13.433Z] Node Version:  v25.2.1
+[debug] [2025-12-12T06:51:13.433Z] Time:          Fri Dec 12 2025 12:51:13 GMT+0600 (Bangladesh Standard Time)
+[debug] [2025-12-12T06:51:13.433Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\my-projects\coffee-store-server-2
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
